@@ -1,6 +1,7 @@
 package com.example.CRUD.controller;
 
 import com.example.CRUD.entity.Password;
+import com.example.CRUD.exceptions.ApiRequestException;
 import com.example.CRUD.service.PasswordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,7 +38,8 @@ public class PasswordController {
 
     @GetMapping
     public List<Password> getAllPasswords() {
-        return passwordService.getAllPasswords();
+        throw new ApiRequestException("Oops! Cant get all password");
+        //return passwordService.getAllPasswords();
     }
 
 
